@@ -23,7 +23,7 @@ class LoginController extends Controller
             if($usercek->password==$password){
                 $request->session()->put('email',$email);
                 
-                return view('index');
+                return redirect('/');
             }else{
                 return "Password Salah";
             }
@@ -31,6 +31,12 @@ class LoginController extends Controller
             return "Username salah";
         }
         
+    }
+
+    public function logout(Request $request) {
+        $request->session()->forget('email');
+        
+        return redirect('/');
     }
 
 }

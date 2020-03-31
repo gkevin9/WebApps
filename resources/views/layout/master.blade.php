@@ -105,6 +105,9 @@
                                         <img class="glyphicon glyphicon-remove" src="storage/img/user.png" alt="user" width="35" height="35">
                                     </a>
                                 </div>
+                                <div class="book_btn d-none d-xl-block">
+                                    <a class="#" href="/logout">Logout</a>
+                                </div>
                                 @else
                                 <div class="book_btn d-none d-xl-block">
                                     <a class="#" href="/login">Login</a>

@@ -27,6 +27,7 @@ Route::get('/about', function () {
 
 Route::get('/login', 'LoginController@login');
 Route::post('/login/proses', 'LoginController@proses');
+Route::get('/logout', 'LoginController@logout');
 
 Route::get('/register', 'RegisterController@register');
 Route::post('/register/store', 'RegisterController@store');
