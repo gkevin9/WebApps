@@ -35,6 +35,10 @@ class RegisterController extends Controller
                 'password' => $password,
                 'phone_number' => $phone
             ]);
+            
+            $request->session()->put('email',$email);
+                
+            return redirect('/');
         }else{
             return "Email sudah ada";
         }
