@@ -99,11 +99,20 @@
                                 </div>
                                     &nbsp;
                                     &nbsp;
+                                @if(\Session::has('email'))
                                 <div class="btn btn-warning btn-circle">
                                     <a class="glyphicon glyphicon-remove" href="#">
                                         <img class="glyphicon glyphicon-remove" src="storage/img/user.png" alt="user" width="35" height="35">
                                     </a>
                                 </div>
+                                @else
+                                <div class="book_btn d-none d-xl-block">
+                                    <a class="#" href="/login">Login</a>
+                                </div>
+                                <div class="book_btn d-none d-xl-block">
+                                    <a class="#" href="/register">Register</a>
+                                </div>
+                                @endif
                             </div>
                         </div>
                         <div class="col-12">

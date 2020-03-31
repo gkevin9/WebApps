@@ -24,3 +24,9 @@ Route::get('/menu', function () {
 Route::get('/about', function () {
     return view('about');
 });
+
+Route::get('/login', 'LoginController@login');
+Route::post('/login/proses', 'LoginController@proses');
+
+Route::get('/register', 'RegisterController@register');
+Route::post('/register/store', 'RegisterController@store');
