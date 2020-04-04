@@ -4,17 +4,17 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Order extends Model
+class Menu extends Model
 {
-    protected $table="order";
+    protected $table="menu";
 
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-    protected $fillable = ['id_order','id_user'
-    
+    protected $fillable = ['id_menu','name','menu_type','price',
+    'created_at','updated_at'
     ];
 
     /**
