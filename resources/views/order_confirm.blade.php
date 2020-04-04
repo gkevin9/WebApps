@@ -1,7 +1,7 @@
 @extends('layout.master')
 @section('class')
 <li><a href="/">home</a></li>
-<li><a href="/menu">Menu</a></li>
+<li><a class="active"  href="/order_up">Menu</a></li>
 <li><a href="/about">About</a></li>
 <li><a class="active" href="/order">Order</a></li>
 @endsection
