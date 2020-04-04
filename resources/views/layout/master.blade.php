@@ -46,16 +46,6 @@
                                         <li><a href="/menu">Menu</a></li>
                                         <li><a href="/about">About</a></li>
                                         <li><a href="#">blog <i class="ti-angle-down"></i></a> -->
-                                            <ul class="submenu">
-                                                <li><a href="blog.html">blog</a></li>
-                                                <li><a href="single-blog.html">single-blog</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="#">Pages <i class="ti-angle-down"></i></a>
-                                            <ul class="submenu">
-                                                <li><a href="elements.html">elements</a></li>
-                                            </ul>
-                                        </li>
                                         <li><a href="contact.html">Contact</a></li>
                                     </ul>
                                 </nav>
@@ -63,7 +53,7 @@
                         </div>
                         <div class="col-xl-2 col-lg-2">
                             <div class="logo-img">
-                                <a href="#">
+                                <a href="/">
                                     <img src="storage/img/logo.png" alt="">
                                 </a>
                             </div>

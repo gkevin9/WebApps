@@ -1,9 +1,9 @@
 @extends('layout.master')
 @section('class')
 <li><a href="/">home</a></li>
-<li><a class="active" href="/menu">Menu</a></li>
+<li><a class="active"  href="/order_up">Menu</a></li>
 <li><a href="/about">About</a></li>
-<li><a href="#">blog <i class="ti-angle-down"></i></a>
+<li><a href="/order">Order</a></li>
 @endsection
 @section('konten')
     <!-- bradcam_area_start -->
@@ -25,7 +25,6 @@
             </div>
             <div class="row">
 
-                <a href="#">    
                     <div class="col-xl-6 col-md-6 col-lg-6">
                         <div class="single_delicious d-flex align-items-center">
                             <div class="thumb">
@@ -35,13 +34,25 @@
                                 <h3>Beefy Burgers</h3>
                                 <p>Great way to make your business appear trust and relevant.</p>
                                 <span>$5</span>
+                                @if(\Session::has('email'))
+                                <form action="/choose" method="GET">
+                                <div class="qty mt-5">
+                                <input type="hidden" name="nama" value="Beefy Burger">
+                                <input type="number" class="count" name="qty" value="1">
+                                </div>
+                                <br>
+                                <input class="boxed-btn3" type="submit" value="Order">
+                                </form>
+                                @else
+                                @endif
+
                             </div>
+                            
                         </div>
-                    </a>
+                        
                     </div>
                 
-
-                <a href="#">    
+                  
                 <div class="col-md-6 col-lg-6">
                     <div class="single_delicious d-flex align-items-center">
                         <div class="thumb">
@@ -51,12 +62,23 @@
                             <h3>Burger Boys</h3>
                             <p>Great way to make your business appear trust and relevant.</p>
                             <span>$5</span>
+                            @if(\Session::has('email'))
+                            <form action="/choose" method="GET">
+                                <div class="qty mt-5">
+                                <input type="hidden" name="nama" value="Burger Boss">
+                                <input type="number" class="count" name="qty" value="1">
+                                </div>
+                                <br>
+                                <input class="boxed-btn3" type="submit" value="Order">
+                            </form>
+                            @else
+                            @endif
                         </div>
                     </div>
-                </a>        
+                      
                 </div>
 
-                <a href="#">
+                
                 <div class="col-lg-6 col-md-6">
                     <div class="single_delicious d-flex align-items-center">
                         <div class="thumb">
@@ -66,12 +88,22 @@
                             <h3>Burger Bizz</h3>
                             <p>Great way to make your business appear trust and relevant.</p>
                             <span>$5</span>
+                            @if(\Session::has('email'))
+                            <form action="/choose" method="GET">
+                                <div class="qty mt-5">
+                                <input type="hidden" name="nama" value="Burger Bizz">
+                                <input type="number" class="count" name="qty" value="1">
+                                </div>
+                                <br>
+                                <input class="boxed-btn3" type="submit" value="Order">
+                            </form>
+                            @else
+                            @endif
                         </div>
                     </div>
-                </a>
                 </div>
 
-                <a href="#">
+                
                 <div class="col-xl-6 col-md-6 col-lg-6">
                     <div class="single_delicious d-flex align-items-center">
                         <div class="thumb">
@@ -81,11 +113,22 @@
                             <h3>Crackles Burger</h3>
                             <p>Great way to make your business appear trust and relevant.</p>
                             <span>$5</span>
+                            @if(\Session::has('email'))
+                            <form action="/choose" method="GET">
+                                <div class="qty mt-5">
+                                <input type="hidden" name="nama" value="Crackles Burger">
+                                <input type="number" class="count" name="qty" value="1">
+                                </div>
+                                <br>
+                                <input class="boxed-btn3" type="submit" value="Order">
+                            </form>
+                            @else
+                            @endif
                         </div>
                     </div>
-                </a>
+                
                 </div>
-                <a href="#">
+                
                 <div class="col-lg-6 col-md-6">
                     <div class="single_delicious d-flex align-items-center">
                         <div class="thumb">
@@ -95,11 +138,22 @@
                             <h3>Bull Burgers</h3>
                             <p>Great way to make your business appear trust and relevant.</p>
                             <span>$5</span>
+                            @if(\Session::has('email'))
+                            <form action="/choose" method="GET">
+                                <div class="qty mt-5">
+                                <input type="hidden" name="nama" value="Bull Burger">
+                                <input type="number" class="count" name="qty" value="1">
+                                </div>
+                                <br>
+                                <input class="boxed-btn3" type="submit" value="Order">
+                            </form>
+                            @else
+                            @endif
                         </div>
                     </div>
-                </a>
+                
                 </div>
-                <a href="#">
+                
                 <div class="col-lg-6 col-md-6">
                     <div class="single_delicious d-flex align-items-center">
                         <div class="thumb">
@@ -109,69 +163,131 @@
                             <h3>Rocket Burgers</h3>
                             <p>Great way to make your business appear trust and relevant.</p>
                             <span>$5</span>
+                            @if(\Session::has('email'))
+                            <form action="/choose" method="GET">
+                                <div class="qty mt-5">
+                                <input type="hidden" name="nama" value="Rocket Burger">
+                                <input type="number" class="count" name="qty" value="1">
+                                </div>
+                                <br>
+                                <input class="boxed-btn3" type="submit" value="Order">
+                            </form>
+                            @else
+                            @endif
                         </div>
                     </div>
-                </a>
+                
                 </div>
 
-                <a href="#">
+                
                 <div class="col-lg-6 col-md-6">
                     <div class="single_delicious d-flex align-items-center">
                         <div class="thumb">
-                            <img src="img/burger/7.png" alt="">
+                            <img src="storage/img/burger/7.png" alt="">
                         </div>
                         <div class="info">
                             <h3>Smokin Burger</h3>
                             <p>Great way to make your business appear trust and relevant.</p>
                             <span>$5</span>
+                            @if(\Session::has('email'))
+                            <form action="/choose" method="GET">
+                                <div class="qty mt-5">
+                                <input type="hidden" name="nama" value="Smokin Burger">
+                                <input type="number" class="count" name="qty" value="1">
+                                </div>
+                                <br>
+                                <input class="boxed-btn3" type="submit" value="Order">
+                            </form>
+                            @else
+                            @endif
                         </div>
                     </div>
-                </a>
+                
                 </div>
-                <a href="#">
+                
                 <div class="col-lg-6 col-md-6">
                     <div class="single_delicious d-flex align-items-center">
                         <div class="thumb">
-                            <img src="img/burger/8.png" alt="">
+                            <img src="storage/img/burger/8.png" alt="">
                         </div>
                         <div class="info">
                             <h3>Delish Burger</h3>
                             <p>Great way to make your business appear trust and relevant.</p>
                             <span>$5</span>
+                            @if(\Session::has('email'))
+                            <form action="/choose" method="GET">
+                                <div class="qty mt-5">
+                                <input type="hidden" name="nama" value="Delish Burger">
+                                <input type="number" class="count" name="qty" value="1">
+                                </div>
+                                <br>
+                                <input class="boxed-btn3" type="submit" value="Order">
+                            </form>
+                            @else
+                            @endif
                         </div>
                     </div>
-                </a>
+                
                 </div>
-                <a href="#">
+                
                 <div class="col-xl-6 col-md-6 col-lg-6">
                     <div class="single_delicious d-flex align-items-center">
                         <div class="thumb">
-                            <img src="img/burger/4.png" alt="">
+                            <img src="storage/img/burger/4.png" alt="">
                         </div>
                         <div class="info">
-                            <h3>Crackles Burger</h3>
+                            <h3>Cracklesious Burger</h3>
                             <p>Great way to make your business appear trust and relevant.</p>
                             <span>$5</span>
+                            @if(\Session::has('email'))
+                            <form action="/choose" method="GET">
+                                <div class="qty mt-5">
+                                <input type="hidden" name="nama" value="Cracklesious Burger">
+                                <input type="number" class="count" name="qty" value="1">
+                                </div>
+                                <br>
+                                <input class="boxed-btn3" type="submit" value="Order">
+                            </form>
+                            @else
+                            @endif
                         </div>
                     </div>
-                </a>
+                
                 </div>
 
-                <a href="#">
+                
                 <div class="col-lg-6 col-md-6">
                     <div class="single_delicious d-flex align-items-center">
                         <div class="thumb">
-                            <img src="img/burger/5.png" alt="">
+                            <img src="storage/img/burger/5.png" alt="">
                         </div>
                         <div class="info">
-                            <h3>Bull Burgers</h3>
+                            <h3>Bull n Turf Burgers</h3>
                             <p>Great way to make your business appear trust and relevant.</p>
                             <span>$5</span>
+                            @if(\Session::has('email'))
+                            <form action="/choose" method="GET">
+                                <div class="qty mt-5">
+                                <input type="hidden" name="nama" value="Bull n Turf Burger">
+                                <input type="number" class="count" name="qty" value="1">
+                                </div>
+                                <br>
+                                <input class="boxed-btn3" type="submit" value="Order">
+                            </form>
+                            @else
+                            @endif
                         </div>
                     </div>
-                </a>
+                
                 </div>
             </div>
+
+            @if(\Session::has('email'))
+            <div style = "position:center;" class="book_btn d-none d-xl-block" >
+                    <a class="boxed-btn3" href="/order">SEE ORDER</a>
+            </div>
+            @else
+            @endif
         </div>
     </div>
     <!-- best_burgers_area_end  -->
@@ -181,13 +297,20 @@
             <div class="Burger_President_here">
                 <div class="single_Burger_President">
                     <div class="room_thumb">
-                        <img src="img/burgers/1.png" alt="">
+                        <img src="storage/img/burgers/1.png" alt="">
                         <div class="room_heading d-flex justify-content-between align-items-center">
                             <div class="room_heading_inner">
                                 <span>$20</span>
                                 <h3>The Burger President</h3>
                                 <p>Great way to make your business appear trust <br> and relevant.</p>
-                                <a href="#" class="boxed-btn3">Order Now</a>
+                                <form action="/choose" method="GET">
+                                <div class="qty mt-5">
+                                <input type="hidden" name="nama" value="Burger President">
+                                <input type="number" class="count" name="qty" value="1">
+                                </div>
+                                <br>
+                                <input class="boxed-btn3" type="submit" value="Order">
+                                </form>
                             </div>
                             
                         </div>
@@ -195,17 +318,25 @@
                 </div>
                 <div class="single_Burger_President">
                     <div class="room_thumb">
-                        <img src="img/burgers/2.png" alt="">
+                        <img src="storage/img/burgers/2.png" alt="">
                         <div class="room_heading d-flex justify-content-between align-items-center">
                             <div class="room_heading_inner">
                                 <span>$20</span>
-                                <h3>The Burger President</h3>
+                                <h3>The Burger Presidentena</h3>
                                 <p>Great way to make your business appear trust <br> and relevant.</p>
-                                <a href="#" class="boxed-btn3">Order Now</a>
+                                <form action="/choose" method="GET">
+                                <div class="qty mt-5">
+                                <input type="hidden" name="nama" value="The Burger Presidentena">
+                                <input type="number" class="count" name="qty" value="1">
+                                </div>
+                                <br>
+                                <input class="boxed-btn3" type="submit" value="Order">
+                                </form>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
     </div>
     <!-- features_room_end -->
@@ -217,7 +348,7 @@
         <div class="row">
             <div class="col-lg-3 col-md-6">
                 <div class="single_instagram">
-                    <img src="img/instragram/1.png" alt="">
+                    <img src="storage/img/instragram/1.png" alt="">
                     <div class="ovrelay">
                         <a href="#">
                             <i class="fa fa-instagram"></i>
@@ -227,7 +358,7 @@
             </div>
             <div class="col-lg-3 col-md-6">
                 <div class="single_instagram">
-                    <img src="img/instragram/2.png" alt="">
+                    <img src="storage/img/instragram/2.png" alt="">
                     <div class="ovrelay">
                         <a href="#">
                             <i class="fa fa-instagram"></i>
@@ -237,7 +368,7 @@
             </div>
             <div class="col-lg-3 col-md-6">
                 <div class="single_instagram">
-                    <img src="img/instragram/3.png" alt="">
+                    <img src="storage/img/instragram/3.png" alt="">
                     <div class="ovrelay">
                         <a href="#">
                             <i class="fa fa-instagram"></i>
@@ -247,7 +378,7 @@
             </div>
             <div class="col-lg-3 col-md-6">
                 <div class="single_instagram">
-                    <img src="img/instragram/4.png" alt="">
+                    <img src="storage/img/instragram/4.png" alt="">
                     <div class="ovrelay">
                         <a href="#">
                             <i class="fa fa-instagram"></i>
