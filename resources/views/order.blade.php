@@ -31,7 +31,6 @@
                             // echo $order[1][0];
                             ?>
 
-                            
                             <?php
                             $count = count($a[0]); 
                             echo"<table border=1>";
@@ -43,7 +42,6 @@
                             } 
                             echo"</table>";
                             ?>
-                        
 
 
                         @endif    
