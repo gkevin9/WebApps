@@ -31,3 +31,23 @@ Route::get('/logout', 'LoginController@logout');
 
 Route::get('/register', 'RegisterController@register');
 Route::post('/register/store', 'RegisterController@store');
+
+Route::get('/order', function (){
+    return view('order');
+});
+
+Route::get('/order_confirm', function (){
+    return view('order_confirm');
+});
+
+Route::get('/contact', function(){
+    return view('contact');
+});
+
+Route::get('/order_done','OrderController@destroy');
+
+Route::get('order_up', 'OrderController@index');
+
+Route::get('choose','OrderController@add_order');
+
+Route::get('view_choice','OrderController@show');
