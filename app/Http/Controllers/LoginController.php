@@ -11,8 +11,6 @@ class LoginController extends Controller
     public function login(){
         session()->forget('status_order');
         session()->forget('order');
-        session()->forget('order_name');
-        session()->forget('order_qty');
     	return view('login');
  
     }
@@ -39,6 +37,8 @@ class LoginController extends Controller
 
     public function logout(Request $request) {
         $request->session()->forget('email');
+        session()->forget('status_order');
+        session()->forget('order');
         
         
         return redirect('/');

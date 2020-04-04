@@ -282,9 +282,12 @@
                 </div>
             </div>
 
+            @if(\Session::has('email'))
             <div style = "position:center;" class="book_btn d-none d-xl-block" >
                     <a class="boxed-btn3" href="/order">SEE ORDER</a>
             </div>
+            @else
+            @endif
         </div>
     </div>
     <!-- best_burgers_area_end  -->
