@@ -34,6 +34,7 @@
                                 <h3>Beefy Burgers</h3>
                                 <p>Great way to make your business appear trust and relevant.</p>
                                 <span>$5</span>
+                                @if(\Session::has('email'))
                                 <form action="/choose" method="GET">
                                 <div class="qty mt-5">
                                 <input type="hidden" name="nama" value="Beefy Burger">
@@ -42,6 +43,8 @@
                                 <br>
                                 <input class="boxed-btn3" type="submit" value="Order">
                                 </form>
+                                @else
+                                @endif
 
                             </div>
                             
@@ -49,7 +52,6 @@
                         
                     </div>
                 
-
                   
                 <div class="col-md-6 col-lg-6">
                     <div class="single_delicious d-flex align-items-center">
@@ -60,6 +62,7 @@
                             <h3>Burger Boys</h3>
                             <p>Great way to make your business appear trust and relevant.</p>
                             <span>$5</span>
+                            @if(\Session::has('email'))
                             <form action="/choose" method="GET">
                                 <div class="qty mt-5">
                                 <input type="hidden" name="nama" value="Burger Boss">
@@ -68,6 +71,8 @@
                                 <br>
                                 <input class="boxed-btn3" type="submit" value="Order">
                             </form>
+                            @else
+                            @endif
                         </div>
                     </div>
                       
@@ -83,6 +88,7 @@
                             <h3>Burger Bizz</h3>
                             <p>Great way to make your business appear trust and relevant.</p>
                             <span>$5</span>
+                            @if(\Session::has('email'))
                             <form action="/choose" method="GET">
                                 <div class="qty mt-5">
                                 <input type="hidden" name="nama" value="Burger Bizz">
@@ -91,6 +97,8 @@
                                 <br>
                                 <input class="boxed-btn3" type="submit" value="Order">
                             </form>
+                            @else
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -105,6 +113,7 @@
                             <h3>Crackles Burger</h3>
                             <p>Great way to make your business appear trust and relevant.</p>
                             <span>$5</span>
+                            @if(\Session::has('email'))
                             <form action="/choose" method="GET">
                                 <div class="qty mt-5">
                                 <input type="hidden" name="nama" value="Crackles Burger">
@@ -113,6 +122,8 @@
                                 <br>
                                 <input class="boxed-btn3" type="submit" value="Order">
                             </form>
+                            @else
+                            @endif
                         </div>
                     </div>
                 
@@ -127,6 +138,7 @@
                             <h3>Bull Burgers</h3>
                             <p>Great way to make your business appear trust and relevant.</p>
                             <span>$5</span>
+                            @if(\Session::has('email'))
                             <form action="/choose" method="GET">
                                 <div class="qty mt-5">
                                 <input type="hidden" name="nama" value="Bull Burger">
@@ -135,6 +147,8 @@
                                 <br>
                                 <input class="boxed-btn3" type="submit" value="Order">
                             </form>
+                            @else
+                            @endif
                         </div>
                     </div>
                 
@@ -149,6 +163,7 @@
                             <h3>Rocket Burgers</h3>
                             <p>Great way to make your business appear trust and relevant.</p>
                             <span>$5</span>
+                            @if(\Session::has('email'))
                             <form action="/choose" method="GET">
                                 <div class="qty mt-5">
                                 <input type="hidden" name="nama" value="Rocket Burger">
@@ -157,6 +172,8 @@
                                 <br>
                                 <input class="boxed-btn3" type="submit" value="Order">
                             </form>
+                            @else
+                            @endif
                         </div>
                     </div>
                 
@@ -172,6 +189,7 @@
                             <h3>Smokin Burger</h3>
                             <p>Great way to make your business appear trust and relevant.</p>
                             <span>$5</span>
+                            @if(\Session::has('email'))
                             <form action="/choose" method="GET">
                                 <div class="qty mt-5">
                                 <input type="hidden" name="nama" value="Smokin Burger">
@@ -180,6 +198,8 @@
                                 <br>
                                 <input class="boxed-btn3" type="submit" value="Order">
                             </form>
+                            @else
+                            @endif
                         </div>
                     </div>
                 
@@ -194,6 +214,7 @@
                             <h3>Delish Burger</h3>
                             <p>Great way to make your business appear trust and relevant.</p>
                             <span>$5</span>
+                            @if(\Session::has('email'))
                             <form action="/choose" method="GET">
                                 <div class="qty mt-5">
                                 <input type="hidden" name="nama" value="Delish Burger">
@@ -202,6 +223,8 @@
                                 <br>
                                 <input class="boxed-btn3" type="submit" value="Order">
                             </form>
+                            @else
+                            @endif
                         </div>
                     </div>
                 
@@ -216,6 +239,7 @@
                             <h3>Cracklesious Burger</h3>
                             <p>Great way to make your business appear trust and relevant.</p>
                             <span>$5</span>
+                            @if(\Session::has('email'))
                             <form action="/choose" method="GET">
                                 <div class="qty mt-5">
                                 <input type="hidden" name="nama" value="Cracklesious Burger">
@@ -224,6 +248,8 @@
                                 <br>
                                 <input class="boxed-btn3" type="submit" value="Order">
                             </form>
+                            @else
+                            @endif
                         </div>
                     </div>
                 
@@ -239,6 +265,7 @@
                             <h3>Bull n Turf Burgers</h3>
                             <p>Great way to make your business appear trust and relevant.</p>
                             <span>$5</span>
+                            @if(\Session::has('email'))
                             <form action="/choose" method="GET">
                                 <div class="qty mt-5">
                                 <input type="hidden" name="nama" value="Bull n Turf Burger">
@@ -247,6 +274,8 @@
                                 <br>
                                 <input class="boxed-btn3" type="submit" value="Order">
                             </form>
+                            @else
+                            @endif
                         </div>
                     </div>
                 

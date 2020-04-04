@@ -9,7 +9,10 @@ use App\User;
 class LoginController extends Controller
 {
     public function login(){
- 
+        session()->forget('status_order');
+        session()->forget('order');
+        session()->forget('order_name');
+        session()->forget('order_qty');
     	return view('login');
  
     }
@@ -18,6 +21,7 @@ class LoginController extends Controller
         $email = $request->input('email');
         $password = $request->input('password');
         $usercek = User::where('email', $email)->first(); 
+        
         
         if($usercek){
             if($usercek->password==$password){
@@ -35,6 +39,7 @@ class LoginController extends Controller
 
     public function logout(Request $request) {
         $request->session()->forget('email');
+        
         
         return redirect('/');
     }

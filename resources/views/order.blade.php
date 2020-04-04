@@ -56,7 +56,11 @@
                     
                     @else
                         <span>You got to login to use this feature</span>
-                        
+                        <div class="btn btn-dark btn-lg">
+                            <a class="glyphicon glyphicon-remove" href="/login">
+                            <h1><b>Login</b></h1>
+                            </a>
+                        </div> 
                     @endif    
 
                     </div>
