@@ -34,4 +34,8 @@ class OrderController extends Controller
     public function show(){
         dd(session()->all());
     }
+
+    public function store(){
+        
+    }
 }
