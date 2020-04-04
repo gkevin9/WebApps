@@ -44,7 +44,7 @@ Route::get('/contact', function(){
     return view('contact');
 });
 
-Route::get('/order_done','OrderController@destroy');
+Route::get('/order_done','OrderController@store');
 
 Route::get('order_up', 'OrderController@index');
 

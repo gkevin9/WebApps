@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Order;
 
 class OrderController extends Controller
 {
@@ -14,9 +15,7 @@ class OrderController extends Controller
     public function destroy(){
         session()->forget('status_order');
         session()->forget('order');
-        session()->forget('order_name');
-        session()->forget('order_qty');
-        
+    
         return redirect('/order_confirm');
     }
 
@@ -26,8 +25,6 @@ class OrderController extends Controller
 
         session()->push('order.0',$menu_name);
         session()->push('order.1',$qty);
-        session()->push('order_name',$menu_name);
-        session()->push('order_qty',$qty);
         return redirect('/menu');
     }
 
@@ -36,6 +33,15 @@ class OrderController extends Controller
     }
 
     public function store(){
+        $id= session()->get('id'); 
+
+        Order::create([
+            'id_user' => $id,
+        ]);
+
+        session()->forget('status_order');
+        session()->forget('order');
+        return redirect('/order_confirm');
         
     }
 }

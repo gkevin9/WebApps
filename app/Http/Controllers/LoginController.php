@@ -41,6 +41,7 @@ class LoginController extends Controller
         $request->session()->forget('email');
         session()->forget('status_order');
         session()->forget('order');
+        session()->foreget('id');
         
         
         return redirect('/');
