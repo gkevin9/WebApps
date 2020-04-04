@@ -41,15 +41,16 @@
                                 echo"</table>";
                                 ?>
                         
-                        @else
-                            <span> You got no Orders </span> 
-
-                        @endif
                         <div class="btn btn-dark btn-lg">
                             <a class="glyphicon glyphicon-remove" href="/order_done">
                             <h1><b>Order</b></h1>
                             </a>
                         </div> 
+                        @else
+                            <span> You got no Orders </span> 
+
+                        @endif
+                        
                     
                     @else
                         <span>You got to login to use this feature</span>
