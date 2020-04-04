@@ -19,11 +19,13 @@ class LoginController extends Controller
         $email = $request->input('email');
         $password = $request->input('password');
         $usercek = User::where('email', $email)->first(); 
+        $userid = User::where('email', $email)->value('id');
         
         
         if($usercek){
             if($usercek->password==$password){
                 $request->session()->put('email',$email);
+                session()->put('id',$userid);
                 
                 return redirect('/');
             }else{
