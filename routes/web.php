@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Order;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,3 +52,11 @@ Route::get('order_up', 'OrderController@index');
 Route::get('choose','OrderController@add_order');
 
 Route::get('view_choice','OrderController@show');
+
+Route::get('payment', function () {
+
+    $id= session()->get('id'); 
+    $bill = Order::where('id_user', $id)->where('status', 'active')->first();
+
+    return view('payment', ['bill' => $bill]);
+});
