@@ -35,7 +35,6 @@ class RegisterController extends Controller
                 'password' => $password,
                 'phone_number' => $phone
             ]);
-            session()->put('id',$userid);
             $request->session()->put('email',$email);
                 
             return redirect('/');

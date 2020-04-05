@@ -37,7 +37,8 @@ class OrderController extends Controller
         $id= session()->get('id'); 
         $menu= session()->get('order');
         Order::create([
-            'id_user' => $id
+            'id_user' => $id,
+            'status' => 'active'
         ]);
         
         $count = count($menu[0]);
