@@ -84,9 +84,7 @@
                                         </li>
                                     </ul>
                                 </div>
-                                <div class="book_btn d-none d-xl-block">
-                                    <a class="#" href="#">+62809xxxxxxx</a>
-                                </div>
+                                
                                     &nbsp;
                                     &nbsp;
                                 @if(\Session::has('email'))
