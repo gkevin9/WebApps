@@ -41,17 +41,17 @@ class OrderController extends Controller
             'status' => 'active'
         ]);
         
-        // $count = count($menu[0]);
-        // $id_order = Order::where('id_user', $id)->orderBy('id_order', 'DESC')->first();
+        $count = count($menu[0]);
+        $id_order = Order::where('id_user', $id)->orderBy('id_order', 'DESC')->first();
         
-        // for($i = 0;$i < $count;$i++){
-        //     $menuselect = Menu::where('name',$menu[0][$i])->first();
-        //     OrderMenu::create([
-        //         'id_menu' =>  $menuselect->id_menu,
-        //         'id_order' => $id_order->id_order,
-        //         'qty' => $menu[1][$i]
-        //     ]);
-        // }
+        for($i = 0;$i < $count;$i++){
+            $menuselect = Menu::where('name',$menu[0][$i])->first();
+            OrderMenu::create([
+                'id_menu' =>  $menuselect->id_menu,
+                'id_order' => $id_order->id_order,
+                'qty' => $menu[1][$i]
+            ]);
+        }
         
         session()->forget('status_order');
         session()->forget('order');

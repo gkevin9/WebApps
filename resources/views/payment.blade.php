@@ -20,15 +20,15 @@
                     <div class="section_title text-center mb-80">
 
                     @if(\Session::has('email'))
+
                         @foreach($bill as $key => $data)
                             <table border=1>
                             <tr>    
-                            <th>{{$bill->id_order}}</th>
-                            <th>{{$bill->id_user}}</th>
-                            <th>{{$bill->status}}</th>          
+                            <th><h3>Pesanan : {{$data->id_order}}</h3></th>       
                             </tr>
                             </table>
                         @endforeach  
+                        
 
                     @else
                         <span>You got to login to use this feature</span>
