@@ -32,11 +32,18 @@
 
                                 <?php
                                 $count = count($a[0]); 
-                                echo"<table border=1>";
+                                echo"<table>";
+                                echo"<tr><th><h3>Menu</h3> <hr></th>
+                                    <th><h3>Qty</h3> <hr></th></tr>";
                                 for ($x = 0; $x < $count; $x++){
                                     echo"<tr>";
-                                    echo "<td>".$a[0][$x]."</td>";
-                                    echo "<td>".$a[1][$x]."</td>";
+                                    echo "<td><h3>".$a[0][$x]."</h3></td>";
+                                    echo "<td><h3>".$a[1][$x]."</h3></td>";
+                                    echo "<td> <form action='/cancel' method='GET'>
+                                    <input type='hidden' name='posisi' value=".$x.">
+                                    <input class='btn btn-outline-warning' type='submit' value='Cancel'>
+                                    </form>
+                                    </td>";
                                     echo"</tr>";
                                 } 
                                 echo"</table>";

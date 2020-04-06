@@ -60,3 +60,5 @@ Route::get('payment', function () {
 
     return view('payment', ['bill' => $bill]);
 });
+
+Route::get('cancel','OrderController@cancel');
