@@ -21,7 +21,8 @@
 
                     @if(\Session::has('email'))
                         
-                        @if(\Session::has('status_order')and('order'))
+                        @if(\Session::has('status_order'))
+                            @if(\Session::has('order'))
                             <span>Here 's your Order</span>
                                 <?php
                                 $order_name = session('order_name');
@@ -40,17 +41,18 @@
                                 } 
                                 echo"</table>";
                                 ?>
-                        
-                        <div class="btn btn-dark btn-lg">
-                            <a class="glyphicon glyphicon-remove" href="/order_done">
-                            <h1><b>Order</b></h1>
-                            </a>
-                        </div> 
-                        @else
-                            <span> You got no Orders </span> 
 
-                        @endif
-                        
+                                <div class="btn btn-dark btn-lg">
+                                <a class="glyphicon glyphicon-remove" href="/order_done">
+                                <h1><b>Order</b></h1>
+                                </a>
+                                </div>
+                            
+                            @else
+                            <span> You got no Orders </span> 
+                            @endif    
+                        @endif  
+                                             
                     
                     @else
                         <span>You got to login to use this feature</span>
