@@ -55,6 +55,8 @@ Route::get('view_choice','OrderController@show');
 
 Route::get('payment','PaymentController@index');
 
-Route::get('paycek','PaymentController@cek');
+Route::get('payment/confirm','PaymentController@detail');
 
 Route::get('cancel','OrderController@cancel');
+
+Route::get('paycek','PaymentController@cek');

@@ -13,7 +13,7 @@
     </div>
     <!-- bradcam_area_end -->
 
-<!-- namipilin pesanan start -->
+<!-- namipilin detail pesanan start -->
 <div class="best_burgers_area">
         <div class="container">
             <div class="row">
@@ -22,21 +22,12 @@
 
                     @if(\Session::has('email'))
                         <table>
-                        @foreach($bill as $key => $data)
-                            <!-- <tr>    
-                            <?php $id_order = $data->id_order;?>
-                            <th><h3>Pesanan : {{$data->id_order}}</h3></th> 
-                            <td> 
-                            <form action="/paycek" method="GET">
-                                <?php
-                                echo"<input type='hidden' name='id_order' value=".$id_order.">";
-                                echo"<input class='boxed-btn3' type='submit' value='Pay'>";
-                                ?>
-                            </form>
-                            </td>      
-                            </tr> -->
-                            
-                            
+                        <tr><td>Menu Makanan</td> <td>qty</td></tr>
+                        @foreach($detail as $key => $data)
+                            <tr>    
+                            <th><h3>{{$data->name}}</h3></th> 
+                            <td><h3>{{$data->qty}}</h3></td>      
+                            </tr> 
                         @endforeach  
                         </table>
 

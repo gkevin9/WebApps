@@ -60,7 +60,6 @@ class OrderController extends Controller
     }
 
     public function cancel(){
-        //return redirect('/order');
         $pos = $_GET['posisi'];
         $event_data_display = session()->get('order');
         session()->forget('order');
