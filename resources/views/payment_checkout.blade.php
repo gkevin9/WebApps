@@ -23,7 +23,7 @@
                     @if(\Session::has('email'))
                         <table>
                         @foreach($bill as $key => $data)
-                            <tr>    
+                            <!-- <tr>    
                             <?php $id_order = $data->id_order;?>
                             <th><h3>Pesanan : {{$data->id_order}}</h3></th> 
                             <td> 
@@ -34,7 +34,8 @@
                                 ?>
                             </form>
                             </td>      
-                            </tr>
+                            </tr> -->
+                            
                             
                         @endforeach  
                         </table>

@@ -53,14 +53,8 @@ Route::get('choose','OrderController@add_order');
 
 Route::get('view_choice','OrderController@show');
 
-Route::get('payment', function () {
+Route::get('payment','PaymentController@index');
 
-    $id= session()->get('id'); 
-    $bill = Order::where('id_user', $id)->where('status', 'active')->get();
-
-    return view('payment', ['bill' => $bill]);
-});
-
-Route::get('paycek','PaymentController@index');
+Route::get('paycek','PaymentController@cek');
 
 Route::get('cancel','OrderController@cancel');
