@@ -27,7 +27,9 @@ class PaymentController extends Controller
         ->select('menu.name', 'ordermenu.qty')
         ->where('ordermenu.id_order', "=", $id_order)
         ->get();
-        return redirect("payment/detail")->with('detail',$detail);
+
+        return view('payment_checkout',['detail'=>$detail]);
+        // return redirect("payment/confirm")->with('detail',$detail);
         // return($detail);
     }
 
