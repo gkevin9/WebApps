@@ -35,8 +35,9 @@ class RegisterController extends Controller
                 'password' => $password,
                 'phone_number' => $phone
             ]);
+            $userid = User::where('email', $email)->value('id');
             $request->session()->put('email',$email);
-                
+            session()->put('id',$userid);
             return redirect('/');
         }else{
             return "Email sudah ada";

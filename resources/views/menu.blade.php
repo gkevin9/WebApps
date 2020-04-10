@@ -32,7 +32,7 @@
                                 <img src="storage/img/burger/1.png" alt="">
                             </div>
                             <div class="info">
-                                <h3>Beefy Burgers</h3>
+                                <h3>Beefy Burger</h3>
                                 <p>Great way to make your business appear trust and relevant.</p>
                                 <span>$5</span>
                                 @if(\Session::has('email'))
@@ -66,7 +66,7 @@
                             @if(\Session::has('email'))
                             <form action="/choose" method="GET">
                                 <div class="qty mt-5">
-                                <input type="hidden" name="nama" value="Burger Boss">
+                                <input type="hidden" name="nama" value="Burger Boys">
                                 <input type="number" class="count" name="qty" value="1">
                                 </div>
                                 <br>
@@ -142,7 +142,7 @@
                             @if(\Session::has('email'))
                             <form action="/choose" method="GET">
                                 <div class="qty mt-5">
-                                <input type="hidden" name="nama" value="Bull Burger">
+                                <input type="hidden" name="nama" value="Bull Burgers">
                                 <input type="number" class="count" name="qty" value="1">
                                 </div>
                                 <br>
@@ -167,7 +167,7 @@
                             @if(\Session::has('email'))
                             <form action="/choose" method="GET">
                                 <div class="qty mt-5">
-                                <input type="hidden" name="nama" value="Rocket Burger">
+                                <input type="hidden" name="nama" value="Rocket Burgers">
                                 <input type="number" class="count" name="qty" value="1">
                                 </div>
                                 <br>
@@ -269,7 +269,7 @@
                             @if(\Session::has('email'))
                             <form action="/choose" method="GET">
                                 <div class="qty mt-5">
-                                <input type="hidden" name="nama" value="Bull n Turf Burger">
+                                <input type="hidden" name="nama" value="Bull n Turf Burgers">
                                 <input type="number" class="count" name="qty" value="1">
                                 </div>
                                 <br>
