@@ -136,7 +136,7 @@
                             <img src="storage/img/burger/5.png" alt="">
                         </div>
                         <div class="info">
-                            <h3>Bull Burgers</h3>
+                            <h3>Bull Burger</h3>
                             <p>Great way to make your business appear trust and relevant.</p>
                             <span>$5</span>
                             @if(\Session::has('email'))

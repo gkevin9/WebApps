@@ -55,13 +55,14 @@ Route::get('view_choice','OrderController@show');
 
 Route::get('payment','PaymentController@index');
 
-// Route::get('payment/cek','PaymentController@detail');
+Route::get('payment_cek','PaymentController@detail');
+
+Route::get('pay_done','PaymentController@done');
 
 // Route::get('/payment/confirm',function($detail){
 //     return view('payment_checkout');
 // });
 
-Route::get('payment/{detail}','PaymentController@detail');
 
 Route::get('cancel','OrderController@cancel');
 

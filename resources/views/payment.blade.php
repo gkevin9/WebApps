@@ -27,7 +27,7 @@
                             <?php $id_order = $data->id_order;?>
                             <th><h3>Pesanan : {{$data->id_order}}</h3></th> 
                             <td> 
-                            <form action="/payment/confirm" method="GET">
+                            <form action="/payment_cek" method="GET">
                                 <?php
                                 echo"<input type='hidden' name='id_order' value=".$id_order.">";
                                 echo"<input class='boxed-btn3' type='submit' value='Pay'>";

@@ -22,7 +22,9 @@
 
                     @if(\Session::has('email'))
                         <table>
-                        <tr><td>Menu Makanan</td> <td>qty</td></tr>
+                        <tr><td><h3>Mohon cek kembali pesanan anda</h3></td></tr>
+                        <tr><td></td></tr>
+                        <tr><td><h3>Menu Makanan</h3></td> <td><h3>qty</h3></td></tr>
                         @foreach($detail as $key => $data)
                             <tr>    
                             <th><h3>{{$data->name}}</h3></th> 
@@ -30,6 +32,12 @@
                             </tr> 
                         @endforeach  
                         </table>
+                        <br>
+                        <div class="btn btn-dark btn-lg">
+                                <a class="glyphicon glyphicon-remove" href="/pay_done">
+                                <h1><b>Pay</b></h1>
+                                </a>
+                        </div>
 
                     @else
                         <span>You got to login to use this feature</span>

@@ -21,6 +21,7 @@ class PaymentController extends Controller
 
     public function detail(){
         $id_order=$_GET['id_order'];
+
         // $detail = OrderMenu::where('id_order',$id_order)->get();
         $detail = DB::table('ordermenu')
         ->join('menu', 'ordermenu.id_menu', '=', 'menu.id_menu')
@@ -28,9 +29,20 @@ class PaymentController extends Controller
         ->where('ordermenu.id_order', "=", $id_order)
         ->get();
 
+        session()->put('payment_active',$id_order);
         return view('payment_checkout',['detail'=>$detail]);
         // return redirect("payment/confirm")->with('detail',$detail);
         // return($detail);
+    }
+
+    public function done(){
+        $id_order= session()->get('payment_active');
+        DB::table('order')
+            ->where('id_order', $id_order)
+            ->update(['status' => "Paid"]);
+        session()->forget('payment_active');
+
+        return view('pay_confirm');
     }
 
     public function cek(){
