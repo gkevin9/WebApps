@@ -231,56 +231,6 @@
                 
                 </div>
                 
-                <div class="col-xl-6 col-md-6 col-lg-6">
-                    <div class="single_delicious d-flex align-items-center">
-                        <div class="thumb">
-                            <img src="storage/img/burger/4.png" alt="">
-                        </div>
-                        <div class="info">
-                            <h3>Cracklesious Burger</h3>
-                            <p>Great way to make your business appear trust and relevant.</p>
-                            <span>$5</span>
-                            @if(\Session::has('email'))
-                            <form action="/choose" method="GET">
-                                <div class="qty mt-5">
-                                <input type="hidden" name="nama" value="Cracklesious Burger">
-                                <input type="number" class="count" name="qty" value="1">
-                                </div>
-                                <br>
-                                <input class="boxed-btn3" type="submit" value="Order">
-                            </form>
-                            @else
-                            @endif
-                        </div>
-                    </div>
-                
-                </div>
-
-                
-                <div class="col-lg-6 col-md-6">
-                    <div class="single_delicious d-flex align-items-center">
-                        <div class="thumb">
-                            <img src="storage/img/burger/5.png" alt="">
-                        </div>
-                        <div class="info">
-                            <h3>Bull n Turf Burgers</h3>
-                            <p>Great way to make your business appear trust and relevant.</p>
-                            <span>$5</span>
-                            @if(\Session::has('email'))
-                            <form action="/choose" method="GET">
-                                <div class="qty mt-5">
-                                <input type="hidden" name="nama" value="Bull n Turf Burgers">
-                                <input type="number" class="count" name="qty" value="1">
-                                </div>
-                                <br>
-                                <input class="boxed-btn3" type="submit" value="Order">
-                            </form>
-                            @else
-                            @endif
-                        </div>
-                    </div>
-                
-                </div>
             </div>
 
             @if(\Session::has('email'))
