@@ -18,7 +18,7 @@ class RegisterController extends Controller
     		'nama' => 'required',
             'email' => 'required',
             'password' => 'required',
-            'phone' => 'required'
+            'phone' => 'required|numeric'
         ]);
         
         $email = $request->input('email');
@@ -40,7 +40,7 @@ class RegisterController extends Controller
             session()->put('id',$userid);
             return redirect('/');
         }else{
-            return "Email sudah ada";
+            return redirect()->back()->with('alert', 'Email yang anda masukkan sudah terdaftar');
         }
     }
 }

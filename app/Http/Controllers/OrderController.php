@@ -24,9 +24,16 @@ class OrderController extends Controller
         $menu_name = $_GET['nama'];
         $qty = $_GET['qty'];
 
-        session()->push('order.0',$menu_name);
-        session()->push('order.1',$qty);
-        return redirect('/menu');
+        if($qty>0)
+        {
+            session()->push('order.0',$menu_name);
+            session()->push('order.1',$qty);
+            return redirect('/menu');
+        }else{
+            return redirect()->back()->with('alert', 'Angka yang anda masukkan kurang dari 1');
+        }
+
+        
     }
 
     public function show(){

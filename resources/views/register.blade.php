@@ -33,9 +33,16 @@
 
     <!-- header-start -->
     <header>
+        <script>
+            var msg = '{{Session::get('alert')}}';
+            var exist = '{{Session::has('alert')}}';
+            if(exist){
+                alert(msg);
+            }
+        </script>
         <div class="header-area ">
             <div id="sticky-header" class="main-header-area">
-                <div class="container-fluid p-0">
+                <div class="container-fluid p-0">           
                     <div class="row align-items-center no-gutters">
                         <div class="col-xl-5 col-lg-5">
                             <div class="main-menu  d-none d-lg-block">
@@ -107,8 +114,18 @@
 
                         </form>
                     </div>
+                    @if (count($errors) > 0)
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                 </div>
             </div>
+            
             <div class="copy-right_text">
                 <div class="container">
                     <div class="footer_border"></div>

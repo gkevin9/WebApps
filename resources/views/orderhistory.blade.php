@@ -4,13 +4,13 @@
 <li><a href="/order_up">Menu</a></li>
 <li><a href="/about">About</a></li>
 <li><a href="/order">Order</a></li>
-<li><a class="active" href="/payment">Pay Here</a></li>
-<li><a href="/orderhistory">Order History</a></li>
+<li><a href="/payment">Pay Here</a></li>
+<li><a class="active" href="/orderhistory">Order History</a></li>
 @endsection
 @section('konten')
     <!-- bradcam_area_start -->
     <div class="bradcam_area breadcam_bg overlay">
-        <h3>Your Bill</h3>
+        <h3>Your History</h3>
     </div>
     <!-- bradcam_area_end -->
 
@@ -27,21 +27,24 @@
                             @foreach($bill as $key => $data)
                                 <tr>    
                                 <?php $id_order = $data->id_order;?>
-                                <th><h3>Pesanan : {{$data->id_order}}</h3></th> 
-                                <td> 
-                                <form action="/payment_cek" method="GET">
+                                <th><h3>Pesanan : {{$data->id_order}}</h3></th>
+                                <td rowspan="2"> 
+                                <form action="/orderhistory_view" method="GET">
                                     <?php
-                                    echo"<input type='hidden' name='id_order' value=".$id_order.">";
-                                    echo"<input class='boxed-btn3' type='submit' value='Pay'>";
+                                        echo"<input type='hidden' name='id_order' value=".$id_order.">";
+                                        echo"<input class='boxed-btn3' type='submit' value='View'>";
                                     ?>
                                 </form>
                                 </td>      
+                                </tr>
+                                <tr>
+                                    <td><h4>Tanggal Pesanan : {{$data->created_at}}</h4></td>
                                 </tr>
                                 
                             @endforeach  
                             </table>
                         @else
-                            <span>You have no order to pay</span>
+                            <span>You don't have history</span>
                         @endif    
 
                     @else

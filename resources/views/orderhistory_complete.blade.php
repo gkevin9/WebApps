@@ -4,13 +4,13 @@
 <li><a href="/order_up">Menu</a></li>
 <li><a href="/about">About</a></li>
 <li><a href="/order">Order</a></li>
-<li><a class="active" href="/payment">Pay Here</a></li>
-<li><a href="/orderhistory">Order History</a></li>
+<li><a href="/payment">Pay Here</a></li>
+<li><a class="active" href="/orderhistory">Order History</a></li>
 @endsection
 @section('konten')
     <!-- bradcam_area_start -->
     <div class="bradcam_area breadcam_bg overlay">
-        <h3>Your Bill</h3>
+        <h3>Your History</h3>
     </div>
     <!-- bradcam_area_end -->
 
@@ -23,28 +23,32 @@
 
                     @if(\Session::has('email'))
                         <table align="center">
-                            <tr><td colspan="3"><span>Cek kembali pesanan Anda</span></td></tr>
-                            <tr>
-                                <td><h3>Menu</h3></td>
-                                <td><h3>Qty</h3></td>
-                                <td><h3>Price</h3></td>
-                            </tr>
-                            @foreach($detail as $key => $data)
-                                <tr>    
-                                    <th><h3>{{$data->name}}</h3></th> 
-                                    <td><h3>{{$data->qty}}</h3></td>
-                                    <td><h3>{{$daftarharga[$data->name]}}</h3></td>      
-                                </tr> 
-                            @endforeach
-                                <tr>
-                                    <td colspan="2"><h3>Total biaya</td></h3>
-                                    <td><h3>{{$totalsemua}}</td></h3>
-                                </tr>
+                        <tr><td colspan="3"><span>History Order</span></td></tr>
+                        <tr>
+                        <td colspan="2"><span>Tanggal Transaksi</span></td>
+                        <td><span>{{$tgl}}</span></td>
+                        </tr>
+                        <tr>
+                        <td><h3>Menu</h3></td>
+                        <td><h3>Qty</h3></td>
+                        <td><h3>Price</h3></td>
+                        </tr>
+                        @foreach($detail as $key => $data)
+                            <tr>    
+                            <th><h3>{{$data->name}}</h3></th> 
+                            <td><h3>{{$data->qty}}</h3></td>
+                            <td><h3>{{$daftarharga[$data->name]}}</h3></td>      
+                            </tr> 
+                        @endforeach
+                        <tr>
+                        <td colspan="2"><h3>Total biaya</td></h3>
+                        <td><h3>{{$totalsemua}}</td></h3>
+                        </tr>
                         </table>
                         <br>
                         <div class="btn btn-dark btn-lg">
-                                <a class="glyphicon glyphicon-remove" href="/pay_done">
-                                <h1><b>Pay</b></h1>
+                                <a class="glyphicon glyphicon-remove" href="/orderhistory">
+                                <h1><b>Back</b></h1>
                                 </a>
                         </div>
 

@@ -67,3 +67,9 @@ Route::get('pay_done','PaymentController@done');
 Route::get('cancel','OrderController@cancel');
 
 Route::get('paycek','PaymentController@cek');
+
+Route::get('/orderhistory', 'OrderHistoryController@index');
+
+// Route::get('/orderhistory/see', 'OrderHistoryController@detail');
+
+Route::get('/orderhistory_view','OrderHistoryController@detail');

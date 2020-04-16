@@ -13,24 +13,29 @@ class PaymentController extends Controller
 {
     public function index(){
         $id= session()->get('id'); 
-       $bill = Order::where('id_user', $id)->where('status', 'active')->get();
-
-       return view("payment")->with('bill',$bill);
+        $bill = Order::where('id_user', $id)->where('status', 'active')->get();
+        $count = count($bill);
+        return view("payment",['bill' => $bill , 'count' => $count]);
     //    return($bill[0]->id_order);
     }
 
     public function detail(){
         $id_order=$_GET['id_order'];
-
+        $totalsemua=0;
+        $daftarharga=[];
         // $detail = OrderMenu::where('id_order',$id_order)->get();
         $detail = DB::table('ordermenu')
         ->join('menu', 'ordermenu.id_menu', '=', 'menu.id_menu')
-        ->select('menu.name', 'ordermenu.qty')
+        ->select('menu.name', 'ordermenu.qty', 'menu.price')
         ->where('ordermenu.id_order', "=", $id_order)
         ->get();
-
+        foreach($detail as $menu=>$value){
+            $total=$value->qty*$value->price;
+            $totalsemua+=$total;
+            $daftarharga[$value->name]=$total;
+        }
         session()->put('payment_active',$id_order);
-        return view('payment_checkout',['detail'=>$detail]);
+        return view('payment_checkout',['detail'=>$detail,'totalsemua'=>$totalsemua,'daftarharga'=>$daftarharga]);
         // return redirect("payment/confirm")->with('detail',$detail);
         // return($detail);
     }

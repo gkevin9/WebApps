@@ -28,10 +28,10 @@ class LoginController extends Controller
                 
                 return redirect('/');
             }else{
-                return "Password Salah";
+                return redirect()->back()->with('alert', 'Password yang anda masukkan salah');
             }
         }else{
-            return "Username salah";
+            return redirect()->back()->with('alert', 'Username yang anda masukkan tidak ditemukan');
         }
         
     }

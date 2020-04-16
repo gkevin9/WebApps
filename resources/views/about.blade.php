@@ -5,6 +5,7 @@
 <li><a class="active" href="/about">About</a></li>
 <li><a href="/order">Order</a></li>
 <li><a href="/payment">Pay Here</a></li>
+<li><a href="/orderhistory">Order History</a></li>
 @endsection
 @section('konten')
 

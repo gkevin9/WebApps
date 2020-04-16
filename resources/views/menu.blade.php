@@ -5,6 +5,7 @@
 <li><a href="/about">About</a></li>
 <li><a href="/order">Order</a></li>
 <li><a href="/payment">Pay Here</a></li>
+<li><a href="/orderhistory">Order History</a></li>
 @endsection
 @section('konten')
     <!-- bradcam_area_start -->
@@ -18,6 +19,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
+                <script>
+                    var msg = '{{Session::get('alert')}}';
+                    var exist = '{{Session::has('alert')}}';
+                    if(exist){
+                        alert(msg);
+                    }
+                </script>
                     <div class="section_title text-center mb-80">
                         <span>Burger Menu</span>
                         <h3>Best Ever Burgers</h3>
@@ -25,12 +33,13 @@
                 </div>
             </div>
             <div class="row">
-
+                    
                     <div class="col-xl-6 col-md-6 col-lg-6">
                         <div class="single_delicious d-flex align-items-center">
                             <div class="thumb">
                                 <img src="storage/img/burger/1.png" alt="">
                             </div>
+                            
                             <div class="info">
                                 <h3>Beefy Burger</h3>
                                 <p>Great way to make your business appear trust and relevant.</p>

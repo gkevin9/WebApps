@@ -5,6 +5,7 @@
 <li><a href="/about">About</a></li>
 <li><a class="active"  href="/order">Order</a></li>
 <li><a href="/payment">Pay Here</a></li>
+<li><a href="/orderhistory">Order History</a></li>
 @endsection
 @section('konten')
     <!-- bradcam_area_start -->
@@ -57,7 +58,7 @@
                                 </div>
                             
                             @else
-                            <span> You got no Orders </span> 
+                            <span> You don't Order yet</span> 
                             @endif    
 
                         @endif  
