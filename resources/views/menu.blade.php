@@ -49,7 +49,7 @@
                                 @if(\Session::has('email'))
                                 <form action="/choose" method="GET">
                                 <div class="qty mt-5">
-                                <input type="hidden" name="nama" value="Beefy Burgers">
+                                <input type="hidden" name="nama" value="Beefy Burger">
                                 <input type="number" class="count" name="qty" value="1">
                                 </div>
                                 <br>
