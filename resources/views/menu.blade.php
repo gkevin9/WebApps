@@ -1,11 +1,13 @@
 @extends('layout.master')
 @section('class')
+
 <li><a href="/">home</a></li>
-<li><a class="active"  href="/order_up">Menu</a></li>
-<li><a href="/about">About</a></li>
+<li><a class="active" href="/order_up">Menu</a></li>
 <li><a href="/order">Order</a></li>
 <li><a href="/payment">Pay Here</a></li>
+<li><a href="/delivery">Delivery</a></li>
 <li><a href="/orderhistory">Order History</a></li>
+
 @endsection
 @section('konten')
     <!-- bradcam_area_start -->
@@ -41,13 +43,13 @@
                             </div>
                             
                             <div class="info">
-                                <h3>Beefy Burger</h3>
+                                <h3>Beefy Burgers</h3>
                                 <p>Great way to make your business appear trust and relevant.</p>
                                 <span>$5</span>
                                 @if(\Session::has('email'))
                                 <form action="/choose" method="GET">
                                 <div class="qty mt-5">
-                                <input type="hidden" name="nama" value="Beefy Burger">
+                                <input type="hidden" name="nama" value="Beefy Burgers">
                                 <input type="number" class="count" name="qty" value="1">
                                 </div>
                                 <br>
@@ -170,13 +172,13 @@
                             <img src="storage/img/burger/6.png" alt="">
                         </div>
                         <div class="info">
-                            <h3>Rocket Burgers</h3>
+                            <h3>Rocket Burger</h3>
                             <p>Great way to make your business appear trust and relevant.</p>
                             <span>$5</span>
                             @if(\Session::has('email'))
                             <form action="/choose" method="GET">
                                 <div class="qty mt-5">
-                                <input type="hidden" name="nama" value="Rocket Burgers">
+                                <input type="hidden" name="nama" value="Rocket Burger">
                                 <input type="number" class="count" name="qty" value="1">
                                 </div>
                                 <br>

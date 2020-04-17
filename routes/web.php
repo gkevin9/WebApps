@@ -65,6 +65,11 @@ Route::get('address',function(){
     return view('address');
 });
 
+Route::get('delivery_process','DeliveryController@otw');
+
+Route::get('delivery_done','DeliveryController@done');
+
+
 Route::get('cancel','OrderController@cancel');
 
 Route::get('paycek','PaymentController@cek');

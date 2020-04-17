@@ -15,9 +15,10 @@ class CreateDeliveryTable extends Migration
     {
         Schema::create('delivery', function (Blueprint $table) {
             $table->id('id_delivery');
+            $table->string('kecamatan');
             $table->string('address');
             $table->foreignId('id_user');
-            $table->string('id_menu');
+            $table->foreignId('id_order');
             $table->timestamps();
         });
     }

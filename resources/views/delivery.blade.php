@@ -22,31 +22,53 @@
                     <div class="section_title text-center mb-80">
 
                     @if(\Session::has('email'))
-                        @if($count>0)
-                            <table>
-                            @foreach($bill as $key => $data)
-                                <tr>    
-                                <?php $id_order = $data->id_order;?>
-                                <th><h3>Pesanan : {{$data->id_order}}</h3></th> 
-                                <td> 
-                                <form action="/address" method="GET">
-                                    <?php
-                                    echo"<input type='hidden' name='id_order' value=".$id_order.">";
-                                    echo"<input class='boxed-btn3' type='submit' value='Deliver'>";
-                                    ?>
-                                </form>
-                                </td>      
-                                </tr>
-                                
-                            @endforeach  
-                            </table>
-                        @else
-                            <span>You have no order to deliver, make an order first</span>
+                        @if(\Session::has('delivery_status'))
+                            @if(\Session('kecamatan')=='Andir')
+                            <?php $time=5;?>
+                            @elseif(\Session('kecamatan')=='Astana Anyar')
+                            <?php $time=7;?>
+                            @elseif(\Session('kecamatan')=='Cicendo')
+                            <?php $time=10;?>
+                            @elseif(\Session('kecamatan')=='Regol')
+                            <?php $time=8;?>
+                            @elseif(\Session('kecamatan')=='Sumur Bandung')
+                            <?php $time=5;?>
+                            @endif
+                            <span>Your Order will come in <?php echo $time?> minute</span>
                                 <div class="btn btn-dark btn-lg">
-                                <a class="glyphicon glyphicon-remove" href="/order_up">
-                                <h1><b>Order</b></h1>
-                                </a>
-                            </div> 
+                                    <a class="glyphicon glyphicon-remove" href="/delivery_done">
+                                    <h1><b>Complete Delivery</b></h1>
+                                    </a>
+                                </div> 
+
+                        @else 
+                            @if($count>0)
+                                <table>
+                                @foreach($bill as $key => $data)
+                                    <tr>    
+                                    <?php $id_order = $data->id_order;?>
+                                  <th><h3>Pesanan : {{$data->id_order}}</h3></th> 
+                                    <td> 
+                                    <form action="/address" method="GET">
+                                        <?php
+                                        echo"<input type='hidden' name='id_order' value=".$id_order.">";
+                                        echo"<input class='boxed-btn3' type='submit' value='Deliver'>";
+                                        ?>
+                                  </form>
+                                    </td>      
+                                    </tr>
+                                
+                                @endforeach  
+                                </table>
+                            @else
+                             <span>You have no order to deliver, make an order first</span>
+                                    <div class="btn btn-dark btn-lg">
+                                    <a class="glyphicon glyphicon-remove" href="/order_up">
+                                    <h1><b>Order</b></h1>
+                                    </a>
+                                    </div> 
+                            @endif  
+                                  
                         @endif    
 
                     @else

@@ -42,6 +42,7 @@ class LoginController extends Controller
         session()->forget('order');
         session()->forget('id');
         session()->forget('payment_active');
+        session()->forget('delivery_status');
         
         return redirect('/');
     }

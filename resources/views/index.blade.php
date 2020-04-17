@@ -1,10 +1,11 @@
 @extends('layout.master')
 @section('class')
+
 <li><a class="active" href="/">home</a></li>
 <li><a href="/order_up">Menu</a></li>
-<li><a href="/about">About</a></li>
 <li><a href="/order">Order</a></li>
 <li><a href="/payment">Pay Here</a></li>
+<li><a href="/delivery">Delivery</a></li>
 <li><a href="/orderhistory">Order History</a></li>
 @endsection
 @section('konten')

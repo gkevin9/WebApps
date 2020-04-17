@@ -22,25 +22,30 @@
                     <div class="section_title text-center mb-80">
 
                     <span>Where is your address : </span>
-                    <form action="/address" method="GET">
+                    <form action="/delivery_process" method="GET">
                                    
                     <div class="form-group">
                         <label for="alamat">Alamat </label>
-                        <input class="form-control form-control-lg" type="text" placeholder="Masukan nama jalan dan nomer tujuan">
+                        <input class="form-control form-control-lg" name='alamat' 
+                        type="text" placeholder="Masukan nama jalan dan nomer tujuan">
                     </div>
 
                     <div class="form-group">
                         <label for="kecamatan">Kecamatan</label>
-                        <select class="form-control" id="kecamatan">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
+                        <select class="form-control" name='kecamatan' id="kecamatan">
+                        <option>Andir</option>
+                        <option>Astana Anyar</option>
+                        <option>Cicendo</option>
+                        <option>Regol</option>
+                        <option>Sumur Bandung</option>
                         </select>
                     </div>
 
-                    
+                    <?php
+                        $id_order=$_GET['id_order'];
+                        session()->put('order_delivery',$id_order); 
+                    ?>
+
                     <input class='boxed-btn3' type='submit' value='Deliver'>
                                 
                     </form>
