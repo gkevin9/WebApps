@@ -45,7 +45,7 @@
                             <div class="info">
                                 <h3>Beefy Burgers</h3>
                                 <p>Great way to make your business appear trust and relevant.</p>
-                                <span>$5</span>
+                                <span>Rp. 50000</span>
                                 @if(\Session::has('email'))
                                 <form action="/choose" method="GET">
                                 <div class="qty mt-5">
@@ -73,7 +73,7 @@
                         <div class="info">
                             <h3>Burger Boys</h3>
                             <p>Great way to make your business appear trust and relevant.</p>
-                            <span>$5</span>
+                            <span>Rp. 40000</span>
                             @if(\Session::has('email'))
                             <form action="/choose" method="GET">
                                 <div class="qty mt-5">
@@ -99,7 +99,7 @@
                         <div class="info">
                             <h3>Burger Bizz</h3>
                             <p>Great way to make your business appear trust and relevant.</p>
-                            <span>$5</span>
+                            <span>Rp. 50000</span>
                             @if(\Session::has('email'))
                             <form action="/choose" method="GET">
                                 <div class="qty mt-5">
@@ -124,7 +124,7 @@
                         <div class="info">
                             <h3>Crackles Burger</h3>
                             <p>Great way to make your business appear trust and relevant.</p>
-                            <span>$5</span>
+                            <span>Rp. 55000</span>
                             @if(\Session::has('email'))
                             <form action="/choose" method="GET">
                                 <div class="qty mt-5">
@@ -149,11 +149,11 @@
                         <div class="info">
                             <h3>Bull Burger</h3>
                             <p>Great way to make your business appear trust and relevant.</p>
-                            <span>$5</span>
+                            <span>Rp. 56000</span>
                             @if(\Session::has('email'))
                             <form action="/choose" method="GET">
                                 <div class="qty mt-5">
-                                <input type="hidden" name="nama" value="Bull Burgers">
+                                <input type="hidden" name="nama" value="Bull Burger">
                                 <input type="number" class="count" name="qty" value="1">
                                 </div>
                                 <br>
@@ -174,7 +174,7 @@
                         <div class="info">
                             <h3>Rocket Burger</h3>
                             <p>Great way to make your business appear trust and relevant.</p>
-                            <span>$5</span>
+                            <span>Rp. 50000</span>
                             @if(\Session::has('email'))
                             <form action="/choose" method="GET">
                                 <div class="qty mt-5">
@@ -200,7 +200,7 @@
                         <div class="info">
                             <h3>Smokin Burger</h3>
                             <p>Great way to make your business appear trust and relevant.</p>
-                            <span>$5</span>
+                            <span>Rp. 50000</span>
                             @if(\Session::has('email'))
                             <form action="/choose" method="GET">
                                 <div class="qty mt-5">
