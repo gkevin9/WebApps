@@ -225,7 +225,7 @@
                         <div class="info">
                             <h3>Delish Burger</h3>
                             <p>Great way to make your business appear trust and relevant.</p>
-                            <span>$5</span>
+                            <span>Rp. 50000</span>
                             @if(\Session::has('email'))
                             <form action="/choose" method="GET">
                                 <div class="qty mt-5">
@@ -245,9 +245,12 @@
             </div>
 
             @if(\Session::has('email'))
-            <div style = "position:center;" class="book_btn d-none d-xl-block" >
-                    <a class="boxed-btn3" href="/order">SEE ORDER</a>
-            </div>
+
+            <div class="btn btn-dark btn-lg">
+                <a class="glyphicon glyphicon-remove" href="/order">
+              <h1><b>SEE ORDER</b></h1>
+               </a>
+            </div> 
             @else
             @endif
         </div>
