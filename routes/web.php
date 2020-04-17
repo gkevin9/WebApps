@@ -59,10 +59,11 @@ Route::get('payment_cek','PaymentController@detail');
 
 Route::get('pay_done','PaymentController@done');
 
-// Route::get('/payment/confirm',function($detail){
-//     return view('payment_checkout');
-// });
+Route::get('delivery','DeliveryController@index');
 
+Route::get('address',function(){
+    return view('address');
+});
 
 Route::get('cancel','OrderController@cancel');
 

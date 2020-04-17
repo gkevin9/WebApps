@@ -46,7 +46,7 @@
                                         <li><a href="/menu">Menu</a></li>
                                         <li><a href="/about">About</a></li>
                                         <li><a href="#">blog <i class="ti-angle-down"></i></a> -->
-                                        <li><a href="contact.html">Contact</a></li>
+                                        
                                     </ul>
                                 </nav>
                             </div>
