@@ -40,7 +40,7 @@ class DeliveryController extends Controller
         $id_order= session()->get('order_delivery');
         DB::table('order')
             ->where('id_order', $id_order)
-            ->update(['status' => "Paid"]);
+            ->update(['status' => "Deliveried"]);
         session()->forget('payment_active');
         session()->forget('delivery_status');
         session()->forget('order_delivery');

@@ -6,6 +6,7 @@
 <li><a href="/payment">Pay Here</a></li>
 <li><a class="active" href="/delivery">Delivery</a></li>
 <li><a href="/orderhistory">Order History</a></li>
+<li><a href="/view_favorite">Favorite</a></li>
 @endsection
 @section('konten')
     <!-- bradcam_area_start -->

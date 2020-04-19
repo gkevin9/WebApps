@@ -6,6 +6,7 @@
 <li><a href="/payment">Pay Here</a></li>
 <li><a href="/delivery">Delivery</a></li>
 <li><a class="active" href="/orderhistory">Order History</a></li>
+<li><a href="/view_favorite">Favorite</a></li>
 @endsection
 @section('konten')
     <!-- bradcam_area_start -->
@@ -28,6 +29,14 @@
                         <td colspan="2"><span>Tanggal Transaksi</span></td>
                         <td><span>{{$tgl}}</span></td>
                         </tr>
+                        <tr>
+                        <td colspan="2"><span>Tipe Pesanan</span></td>
+                        @if($status =="Paid")
+                            <td><span>Dine in</span></td>
+                        @else
+                            <td><span>Delivery</span></td>
+                        </tr>
+                        @endif
                         <tr>
                         <td><h3>Menu</h3></td>
                         <td><h3>Qty</h3></td>

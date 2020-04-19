@@ -12,7 +12,7 @@ class OrderHistoryController extends Controller
 {
     public function index(){
         $id= session()->get('id'); 
-        $bill = Order::where('id_user', $id)->where('status', 'paid')->get();
+        $bill = Order::where('id_user', $id)->where('status', 'paid')->orWhere('status', 'deliveried')->get();
         $count = count($bill);
         return view("orderhistory",['bill' => $bill , 'count' => $count]);
     //    return($bill[0]->id_order);
@@ -20,6 +20,7 @@ class OrderHistoryController extends Controller
 
     public function detail(){
         $id_order=$_GET['id_order'];
+        $status=$_GET['status'];
         $totalsemua=0;
         $daftarharga=[];
         // $detail = OrderMenu::where('id_order',$id_order)->get();
@@ -36,6 +37,6 @@ class OrderHistoryController extends Controller
             $totalsemua+=$total;
             $daftarharga[$value->name]=$total;
         }
-        return view('orderhistory_complete',['detail'=>$detail, 'tgl'=>$tgl,'totalsemua'=>$totalsemua,'daftarharga'=>$daftarharga]);
+        return view('orderhistory_complete',['detail'=>$detail, 'tgl'=>$tgl,'totalsemua'=>$totalsemua,'daftarharga'=>$daftarharga, 'status'=>$status]);
     }
 }

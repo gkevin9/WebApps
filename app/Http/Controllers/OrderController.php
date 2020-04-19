@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Order;
 use App\OrderMenu;
 use App\Menu;
+use Session;
+
 class OrderController extends Controller
 {
     public function index(){
@@ -23,17 +25,48 @@ class OrderController extends Controller
     public function add_order(){
         $menu_name = $_GET['nama'];
         $qty = $_GET['qty'];
-
+        $order = session()->get('order',[]);
+        $cek =false;
+        $hasil=0;
         if($qty>0)
-        {
-            session()->push('order.0',$menu_name);
-            session()->push('order.1',$qty);
+        {   
+            if($order)
+            {   
+                foreach($order as &$data)
+                {   
+                    $menu=array_keys($data);
+                    if(strcmp($menu[0],$menu_name)==0)
+                    {   
+                        $hasil=(int)$data[$menu_name];
+                        $hasil+=$qty;
+                        $data[$menu_name]=$hasil;
+                        $cek=true;
+                        break;
+                    }
+                }
+                if($cek){
+                    echo "<br>";
+                    Session::put('order',$order);
+                    
+                }else{
+                    $array =[];
+                    $array[$menu_name]=$qty;
+                    Session::push('order',$array);
+                }
+            }
+            else 
+            {   
+                $array =[];
+                $array[$menu_name]=$qty;
+                Session::push('order', $array);
+                
+            }
             return redirect('/menu');
-        }else{
+        }
+        else
+        {
             return redirect()->back()->with('alert', 'Angka yang anda masukkan kurang dari 1');
         }
-
-        
     }
 
     public function show(){
@@ -48,15 +81,21 @@ class OrderController extends Controller
             'status' => 'active'
         ]);
         
-        $count = count($menu[0]);
+        $count = count($menu);
         $id_order = Order::where('id_user', $id)->orderBy('id_order', 'DESC')->first();
         
         for($i = 0;$i < $count;$i++){
-            $menuselect = Menu::where('name',$menu[0][$i])->first();
+            $menulist=array_keys($menu[$i]);
+            $menuselect = Menu::where('name',$menulist[0])->first();
+            echo ($menuselect->id_menu);
+            echo "<br>";
+            print(var_dump($menu[$i][$menulist[0]]));
+            echo "<br>";
+            
             OrderMenu::create([
                 'id_menu' =>  $menuselect->id_menu,
                 'id_order' => $id_order->id_order,
-                'qty' => $menu[1][$i]
+                'qty' => $menu[$i][$menulist[0]]
             ]);
         }
         
@@ -70,12 +109,15 @@ class OrderController extends Controller
         $pos = $_GET['posisi'];
         $event_data_display = session()->get('order');
         session()->forget('order');
-        unset($event_data_display[0][$pos]);
-        unset($event_data_display[1][$pos]);    
-        $name = array_values($event_data_display[0]);
-        $qty = array_values($event_data_display[1]);
-        session()->push('order', $name);
-        session()->push('order', $qty);
+        array_splice($event_data_display,$pos,1);     
+        print(var_dump($event_data_display));
+        $count=count($event_data_display);
+        if($count>0){
+            print("halo");
+            echo "<br>";
+            print(var_dump($event_data_display));
+            session()->put('order', $event_data_display);
+        }
         return redirect('/order');
         // return (dd($event_data_display));
     }

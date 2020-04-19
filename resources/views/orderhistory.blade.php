@@ -6,6 +6,7 @@
 <li><a href="/payment">Pay Here</a></li>
 <li><a href="/delivery">Delivery</a></li>
 <li><a class="active" href="/orderhistory">Order History</a></li>
+<li><a href="/view_favorite">Favorite</a></li>
 
 @endsection
 @section('konten')
@@ -33,6 +34,7 @@
                                 <form action="/orderhistory_view" method="GET">
                                     <?php
                                         echo"<input type='hidden' name='id_order' value=".$id_order.">";
+                                        echo"<input type='hidden' name='status' value=".$data->status.">";
                                         echo"<input class='boxed-btn3' type='submit' value='View'>";
                                     ?>
                                 </form>

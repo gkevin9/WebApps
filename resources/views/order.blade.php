@@ -6,6 +6,7 @@
 <li><a href="/payment">Pay Here</a></li>
 <li><a href="/delivery">Delivery</a></li>
 <li><a href="/orderhistory">Order History</a></li>
+<li><a href="/view_favorite">Favorite</a></li>
 @endsection
 @section('konten')
     <!-- bradcam_area_start -->
@@ -33,20 +34,23 @@
                                 ?>
 
                                 <?php
-                                $count = count($a[0]); 
+                                $i=0;
                                 echo"<table>";
                                 echo"<tr><th><h3>Menu</h3> <hr></th>
                                     <th><h3>Qty</h3> <hr></th></tr>";
-                                for ($x = 0; $x < $count; $x++){
+                                foreach($a as $data)
+                                {   
+                                    $menu=array_keys($data);
                                     echo"<tr>";
-                                    echo "<td><h3>".$a[0][$x]."</h3></td>";
-                                    echo "<td><h3>".$a[1][$x]."</h3></td>";
+                                    echo "<td><h3>".$menu[0]."</h3></td>";
+                                    echo "<td><h3>".$data[$menu[0]]."</h3></td>";
                                     echo "<td> <form action='/cancel' method='GET'>
-                                    <input type='hidden' name='posisi' value=".$x.">
+                                    <input type='hidden' name='posisi' value=".$i.">
                                     <input class='btn btn-outline-warning' type='submit' value='Cancel'>
                                     </form>
                                     </td>";
                                     echo"</tr>";
+                                    $i+=1;
                                 } 
                                 echo"</table>";
                                 ?>

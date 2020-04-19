@@ -51,6 +51,14 @@ Route::get('order_up', 'OrderController@index');
 
 Route::get('choose','OrderController@add_order');
 
+Route::get('/favorite','FavoriteController@add_favorite');
+
+Route::get('/view_favorite','FavoriteController@index');
+
+Route::get('/delete_favorite','FavoriteController@delete');
+
+Route::get('/add_favorite_to_order','FavoriteController@add_order');
+
 Route::get('view_choice','OrderController@show');
 
 Route::get('payment','PaymentController@index');

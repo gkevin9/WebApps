@@ -7,6 +7,7 @@
 <li><a href="/payment">Pay Here</a></li>
 <li><a href="/delivery">Delivery</a></li>
 <li><a href="/orderhistory">Order History</a></li>
+<li><a href="/view_favorite">Favorite</a></li>
 
 @endsection
 @section('konten')
@@ -49,11 +50,17 @@
                                 @if(\Session::has('email'))
                                 <form action="/choose" method="GET">
                                 <div class="qty mt-5">
-                                <input type="hidden" name="nama" value="Beefy Burger">
+                                <input type="hidden" name="nama" value="Beefy Burgers">
                                 <input type="number" class="count" name="qty" value="1">
                                 </div>
                                 <br>
                                 <input class="boxed-btn3" type="submit" value="Order">
+                                </form>
+                                <br>
+                                <form action="/favorite" method="GET">
+                                    @csrf
+                                    <input type="hidden" name="nama" value="Beefy Burgers">
+                                    <input class="boxed-btn3" type="submit" value="Favorite" style="background-color:#008CBA">
                                 </form>
                                 @else
                                 @endif
@@ -82,9 +89,15 @@
                                 </div>
                                 <br>
                                 <input class="boxed-btn3" type="submit" value="Order">
-                            </form>
-                            @else
-                            @endif
+                                </form>
+                                <br>
+                                <form action="/favorite" method="GET">
+                                    @csrf
+                                    <input type="hidden" name="nama" value="Burger Boys">
+                                    <input class="boxed-btn3" type="submit" value="Favorite" style="background-color:#008CBA">
+                                </form>
+                                @else
+                                @endif
                         </div>
                     </div>
                       
@@ -108,9 +121,15 @@
                                 </div>
                                 <br>
                                 <input class="boxed-btn3" type="submit" value="Order">
-                            </form>
-                            @else
-                            @endif
+                                </form>
+                                <br>
+                                <form action="/favorite" method="GET">
+                                    @csrf
+                                    <input type="hidden" name="nama" value="Burger Bizz">
+                                    <input class="boxed-btn3" type="submit" value="Favorite" style="background-color:#008CBA">
+                                </form>
+                                @else
+                                @endif
                         </div>
                     </div>
                 </div>
@@ -133,9 +152,15 @@
                                 </div>
                                 <br>
                                 <input class="boxed-btn3" type="submit" value="Order">
-                            </form>
-                            @else
-                            @endif
+                                </form>
+                                <br>
+                                <form action="/favorite" method="GET">
+                                    @csrf
+                                    <input type="hidden" name="nama" value="Crackles Burger">
+                                    <input class="boxed-btn3" type="submit" value="Favorite" style="background-color:#008CBA">
+                                </form>
+                                @else
+                                @endif
                         </div>
                     </div>
                 
@@ -158,9 +183,15 @@
                                 </div>
                                 <br>
                                 <input class="boxed-btn3" type="submit" value="Order">
-                            </form>
-                            @else
-                            @endif
+                                </form>
+                                <br>
+                                <form action="/favorite" method="GET">
+                                    @csrf
+                                    <input type="hidden" name="nama" value="Bull Burger">
+                                    <input class="boxed-btn3" type="submit" value="Favorite" style="background-color:#008CBA">
+                                </form>
+                                @else
+                                @endif
                         </div>
                     </div>
                 
@@ -183,9 +214,15 @@
                                 </div>
                                 <br>
                                 <input class="boxed-btn3" type="submit" value="Order">
-                            </form>
-                            @else
-                            @endif
+                                </form>
+                                <br>
+                                <form action="/favorite" method="GET">
+                                    @csrf
+                                    <input type="hidden" name="nama" value="Rocket Burger">
+                                    <input class="boxed-btn3" type="submit" value="Favorite" style="background-color:#008CBA">
+                                </form>
+                                @else
+                                @endif
                         </div>
                     </div>
                 
@@ -209,9 +246,15 @@
                                 </div>
                                 <br>
                                 <input class="boxed-btn3" type="submit" value="Order">
-                            </form>
-                            @else
-                            @endif
+                                </form>
+                                <br>
+                                <form action="/favorite" method="GET">
+                                    @csrf
+                                    <input type="hidden" name="nama" value="Smokin Burger">
+                                    <input class="boxed-btn3" type="submit" value="Favorite" style="background-color:#008CBA">
+                                </form>
+                                @else
+                                @endif
                         </div>
                     </div>
                 
@@ -234,9 +277,15 @@
                                 </div>
                                 <br>
                                 <input class="boxed-btn3" type="submit" value="Order">
-                            </form>
-                            @else
-                            @endif
+                                </form>
+                                <br>
+                                <form action="/favorite" method="GET">
+                                    @csrf
+                                    <input type="hidden" name="nama" value="Delish Burger">
+                                    <input class="boxed-btn3" type="submit" value="Favorite" style="background-color:#008CBA">
+                                </form>
+                                @else
+                                @endif
                         </div>
                     </div>
                 
